@@ -286,10 +286,11 @@ def pursuit_gain(input, input_v, SPV_idx, speed, speed_mode, user_defined, direc
     try:
         print("SPEED Mode: %s" % speed_mode)
 
-        if speed_mode == '4':
-            speed = int(user_defined)
-        else:
-            speed = int(speed)
+        # if speed_mode == '4':
+        #     speed = int(user_defined)
+        # else:
+        #     speed = int(speed)
+        speed = user_defined = float(user_defined)
         print("SPEED: %d" % speed)
 
         target_velocity_3s = 20  # (15° - (- 15°)) / 1.5 = 20 °/s (Pursuit 3s)
@@ -433,8 +434,9 @@ def pursuit_gain(input, input_v, SPV_idx, speed, speed_mode, user_defined, direc
         logs = logs + "pursuit_gain occured ERROR." + "\n"
         return p_locs, n_locs, pg_locs, ng_locs, p_gain, n_gain, m_gain, p_med, n_med, m_med, logs
 
-def saccade_gain(input, input_v, FP_idx, speed, logs):
+def saccade_gain(input, input_v, FP_idx, user_defined, logs):
     try:
+        speed = user_defined = float(user_defined)
         print("SPEED: %d" % speed)
 
         p_locs = find_peaks(input, height=8, distance=speed / 2 * 25)
@@ -850,18 +852,18 @@ try:
 
         ## Specific test processing
         if 'Horizontal pursuit' in lc.patient_test_data[i]['file_name']:
-            p_locs, n_locs, pg_locs, ng_locs, p_gain, n_gain, m_gain, pp_med, pn_med, pm_med, logs = pursuit_gain(y_1_H, input_1_H, index_H, lc.patient_test_data[i]['Speed'][0].split(':')[1].split('s')[0], lc.patient_test_data[i]['Speed_Mode'], lc.patient_test_data[i]['Userdefined_speed'], lc.patient_test_data[i]['file_name'].split(' ')[0], logs)
+            p_locs, n_locs, pg_locs, ng_locs, p_gain, n_gain, m_gain, pp_med, pn_med, pm_med, logs = pursuit_gain(y_1_H, input_1_H, index_H, 'DEPRECATED', lc.patient_test_data[i]['Speed_Mode'], lc.patient_test_data[i]['Userdefined_speed'], lc.patient_test_data[i]['file_name'].split(' ')[0], logs)
 
             # Right-eye
-            re_p_locs, re_n_locs, re_pg_locs, re_ng_locs, re_p_gain, re_n_gain, re_m_gain, re_pp_med, re_pn_med, re_pm_med, logs = pursuit_gain(re_y_1_H, re_input_1_H, re_index_H, lc.patient_test_data[i]['Speed'][0].split(':')[1].split('s')[0], lc.patient_test_data[i]['Speed_Mode'], lc.patient_test_data[i]['Userdefined_speed'], lc.patient_test_data[i]['file_name'].split(' ')[0], logs)
+            re_p_locs, re_n_locs, re_pg_locs, re_ng_locs, re_p_gain, re_n_gain, re_m_gain, re_pp_med, re_pn_med, re_pm_med, logs = pursuit_gain(re_y_1_H, re_input_1_H, re_index_H, 'DEPRECATED', lc.patient_test_data[i]['Speed_Mode'], lc.patient_test_data[i]['Userdefined_speed'], lc.patient_test_data[i]['file_name'].split(' ')[0], logs)
 
             #print(p_gain, n_gain, m_gain)
 
         if 'Vertical pursuit' in lc.patient_test_data[i]['file_name']:
-            p_locs, n_locs, pg_locs, ng_locs, p_gain, n_gain, m_gain, pp_med, pn_med, pm_med, logs = pursuit_gain(y_1_V, input_1_V, index_V, lc.patient_test_data[i]['Speed'][0].split(':')[1].split('s')[0], lc.patient_test_data[i]['Speed_Mode'], lc.patient_test_data[i]['Userdefined_speed'], lc.patient_test_data[i]['file_name'].split(' ')[0], logs)
+            p_locs, n_locs, pg_locs, ng_locs, p_gain, n_gain, m_gain, pp_med, pn_med, pm_med, logs = pursuit_gain(y_1_V, input_1_V, index_V, 'DEPRECATED', lc.patient_test_data[i]['Speed_Mode'], lc.patient_test_data[i]['Userdefined_speed'], lc.patient_test_data[i]['file_name'].split(' ')[0], logs)
 
             # Right-eye
-            re_p_locs, re_n_locs, re_pg_locs, re_ng_locs, re_p_gain, re_n_gain, re_m_gain, re_pp_med, re_pn_med, re_pm_med, logs = pursuit_gain(re_y_1_V, re_input_1_V, re_index_V, lc.patient_test_data[i]['Speed'][0].split(':')[1].split('s')[0], lc.patient_test_data[i]['Speed_Mode'], lc.patient_test_data[i]['Userdefined_speed'], lc.patient_test_data[i]['file_name'].split(' ')[0], logs)
+            re_p_locs, re_n_locs, re_pg_locs, re_ng_locs, re_p_gain, re_n_gain, re_m_gain, re_pp_med, re_pn_med, re_pm_med, logs = pursuit_gain(re_y_1_V, re_input_1_V, re_index_V, 'DEPRECATED', lc.patient_test_data[i]['Speed_Mode'], lc.patient_test_data[i]['Userdefined_speed'], lc.patient_test_data[i]['file_name'].split(' ')[0], logs)
 
             #print(p_gain, n_gain, m_gain)
 
@@ -869,24 +871,24 @@ try:
         if 'Horizontal saccade' in lc.patient_test_data[i]['file_name']:
             (p_locs, n_locs, p_first_amp_loc, n_first_amp_loc,
              r_gain, l_gain, m_gain, sr_med, sl_med, sm_med,
-             p_peak_v, n_peak_v, m_peak_v, p_med_v, n_med_v, m_med_v, logs) = saccade_gain(y_1_H, input_1_H, locs_H, int(lc.patient_test_data[i]['Speed'][0].split(':')[1].split('s')[0]), logs)
+             p_peak_v, n_peak_v, m_peak_v, p_med_v, n_med_v, m_med_v, logs) = saccade_gain(y_1_H, input_1_H, locs_H, lc.patient_test_data[i]['Userdefined_speed'], logs)
 
             # Right-eye
             (re_p_locs, re_n_locs, re_p_first_amp_loc, re_n_first_amp_loc,
              re_r_gain, re_l_gain, re_m_gain, re_sr_med, re_sl_med, re_sm_med,
-             re_p_peak_v, re_n_peak_v, re_m_peak_v, re_p_med_v, re_n_med_v, re_m_med_v, logs) = saccade_gain(re_y_1_H, re_input_1_H, re_locs_H, int(lc.patient_test_data[i]['Speed'][0].split(':')[1].split('s')[0]), logs)
+             re_p_peak_v, re_n_peak_v, re_m_peak_v, re_p_med_v, re_n_med_v, re_m_med_v, logs) = saccade_gain(re_y_1_H, re_input_1_H, re_locs_H, lc.patient_test_data[i]['Userdefined_speed'], logs)
 
             #print(r_gain, l_gain, p_peak_v, n_peak_v)
 
         if 'Vertical saccade' in lc.patient_test_data[i]['file_name']:
             (p_locs, n_locs, p_first_amp_loc, n_first_amp_loc,
              r_gain, l_gain, m_gain, sr_med, sl_med, sm_med,
-             p_peak_v, n_peak_v, m_peak_v, p_med_v, n_med_v, m_med_v, logs) = saccade_gain(y_1_V, input_1_V, locs_V, int(lc.patient_test_data[i]['Speed'][0].split(':')[1].split('s')[0]), logs)
+             p_peak_v, n_peak_v, m_peak_v, p_med_v, n_med_v, m_med_v, logs) = saccade_gain(y_1_V, input_1_V, locs_V, lc.patient_test_data[i]['Userdefined_speed'], logs)
 
             # Right-eye
             (re_p_locs, re_n_locs, re_p_first_amp_loc, re_n_first_amp_loc,
              re_r_gain, re_l_gain, re_m_gain, re_sr_med, re_sl_med, re_sm_med,
-             re_p_peak_v, re_n_peak_v, re_m_peak_v, re_p_med_v, re_n_med_v, re_m_med_v, logs) = saccade_gain(re_y_1_V, re_input_1_V, re_locs_V, int(lc.patient_test_data[i]['Speed'][0].split(':')[1].split('s')[0]), logs)
+             re_p_peak_v, re_n_peak_v, re_m_peak_v, re_p_med_v, re_n_med_v, re_m_med_v, logs) = saccade_gain(re_y_1_V, re_input_1_V, re_locs_V, lc.patient_test_data[i]['Userdefined_speed'], logs)
 
             #print(r_gain, l_gain, p_peak_v, n_peak_v)
 
