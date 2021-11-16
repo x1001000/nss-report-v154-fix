@@ -47,8 +47,8 @@ def createFolder(directory):
     except OSError:
         print ('Error: Creating directory. ' +  directory)
 
-root = tk.Tk()
-root.withdraw()
+# root = tk.Tk()
+# root.withdraw()
 # create folder
 selectpath = lc.patient_test_dir_path
 # fall = filedialog.askopenfilename(initialdir=selectpath,title="Select Video File",filetypes=(("Video Files", "*.avi"), ("All Files", "*.*")))
