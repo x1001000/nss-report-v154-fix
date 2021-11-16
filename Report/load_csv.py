@@ -73,12 +73,12 @@ def find_patient_data_dir(data_path, patient_ID):
     # load spenific patient_ID
     for root, dirs, files in walk(data_path):
         for d in dirs:
-            if (patient_ID == d.split(" ")[-1]): # or (patient_ID == d.split("_")[-1]):
+            if (patient_ID == d.split("_")[-1]): # or (patient_ID == d.split("_")[-1]):
                 fullpath = join(root, d)
                 dir.append(d)
                 dir_path.append(fullpath)
             print(patient_ID)
-            print(d.split(" ")[-1])    
+            # print(d.split(" ")[-1])    
     
     if len(dir) > 1:
         list = ""
