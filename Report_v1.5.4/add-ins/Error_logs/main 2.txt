@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/Users/peterliang/Desktop/Neruobit_Python/Report/main.py", line 667, in <module>
+    report(le_data, re_data, l_mdata)
+  File "/Users/peterliang/Desktop/Neruobit_Python/Report/main.py", line 240, in report
+    story = content(doc, data1, data2)
+  File "/Users/peterliang/Desktop/Neruobit_Python/Report/main.py", line 124, in content
+    if report_data_l["POS"] == "Left":
+KeyError: 'POS'

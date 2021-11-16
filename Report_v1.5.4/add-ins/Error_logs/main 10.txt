@@ -1,0 +1,19 @@
+Traceback (most recent call last):
+  File "/Users/peterliang/anaconda3/envs/cv/lib/python3.7/site-packages/PIL/Image.py", line 2138, in save
+    format = EXTENSION[ext]
+KeyError: '.svg'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/peterliang/Desktop/Neruobit_Python/Report/main.py", line 696, in <module>
+    report(le_data, re_data, l_mdata)
+  File "/Users/peterliang/Desktop/Neruobit_Python/Report/main.py", line 269, in report
+    story = content(doc, data1, data2)
+  File "/Users/peterliang/Desktop/Neruobit_Python/Report/main.py", line 137, in content
+    paste([summary_figure_le, summary_figure_re], "summary.svg")
+  File "/Users/peterliang/Desktop/Neruobit_Python/Report/main.py", line 249, in paste
+    result = result.save(img_name)
+  File "/Users/peterliang/anaconda3/envs/cv/lib/python3.7/site-packages/PIL/Image.py", line 2140, in save
+    raise ValueError("unknown file extension: {}".format(ext)) from e
+ValueError: unknown file extension: .svg

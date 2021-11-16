@@ -1,0 +1,74 @@
+Test_calib
+C:\Users\neuro\Desktop\usbcam54\usbcam\usbcam\bin\Release\Report\Error_logs\SPV_main.txt is deleted successfully
+C:\Users\neuro\Desktop\usbcam54\usbcam\usbcam\bin\Release\Report\Error_logs\LOGS.txt is deleted successfully
+Record video type: mp4
+Successfully load 8 CSV Files
+===============================================
+(1/8) Now processing video: C:\Users\neuro\Desktop\usbcam54\usbcam\usbcam\bin\Release\Result\20211104 Test_calib\145841_Test_calib.mp4 | test ID: Horizontal pursuit 5.0s (0.2Hz)
+Duration: 14 seconds
+===============================================
+(2/8) Now processing video: C:\Users\neuro\Desktop\usbcam54\usbcam\usbcam\bin\Release\Result\20211104 Test_calib\145950_Test_calib.mp4 | test ID: Horizontal pursuit 3.0s (0.33Hz)
+Duration: 14 seconds
+===============================================
+(3/8) Now processing video: C:\Users\neuro\Desktop\usbcam54\usbcam\usbcam\bin\Release\Result\20211104 Test_calib\150040_Test_calib.mp4 | test ID: Horizontal saccade 3s
+Duration: 14 seconds
+===============================================
+(4/8) Now processing video: C:\Users\neuro\Desktop\usbcam54\usbcam\usbcam\bin\Release\Result\20211104 Test_calib\150130_Test_calib.mp4 | test ID: Horizontal saccade 3.0s (0.33Hz)
+Duration: 15 seconds
+===============================================
+(5/8) Now processing video: C:\Users\neuro\Desktop\usbcam54\usbcam\usbcam\bin\Release\Result\20211104 Test_calib\150233_Test_calib.mp4 | test ID: Gaze 3s
+Duration: 23 seconds
+===============================================
+(6/8) Now processing video: C:\Users\neuro\Desktop\usbcam54\usbcam\usbcam\bin\Release\Result\20211104 Test_calib\150421_Test_calib.mp4 | test ID: Horizontal OKN+ 3s
+Duration: 13 seconds
+===============================================
+(7/8) Now processing video: C:\Users\neuro\Desktop\usbcam54\usbcam\usbcam\bin\Release\Result\20211104 Test_calib\150517_Test_calib.mp4 | test ID: Horizontal OKN+ 5.0s (0.2Hz)
+Duration: 14 seconds
+===============================================
+(8/8) Now processing video: C:\Users\neuro\Desktop\usbcam54\usbcam\usbcam\bin\Release\Result\20211104 Test_calib\150750_Test_calib.mp4 | test ID: Fixation suppression 3s
+Duration: 13 seconds
+===============================================
+(1/8) Now loading : Horizontal pursuit 5.0s (0.2Hz)
+Createing : Left_eye_Horizontal pursuit 5.0s (0.2Hz).png
+Createing : Right_eye_Horizontal pursuit 5.0s (0.2Hz).png
+Lefteye_H: mean =  -0.179255 | std = 12.084739 | median = -0.237500 | iqr = 17.412500
+Lefteye_V: mean =  -0.145227 | std = 1.506467 | median = -0.150000 | iqr = 1.068750
+Righteye_H: mean =  -0.503918 | std = 12.127953 | median = 0.350000 | iqr = 17.412500
+Righteye_V: mean =  -0.153906 | std = 1.017150 | median = 0.025000 | iqr = 1.068750
+Finish :Horizontal pursuit 5.0s (0.2Hz)
+===============================================
+(2/8) Now loading : Horizontal pursuit 3.0s (0.33Hz)
+Createing : Left_eye_Horizontal pursuit 3.0s (0.33Hz).png
+Createing : Right_eye_Horizontal pursuit 3.0s (0.33Hz).png
+Lefteye_H: mean =  -1.829397 | std = 17.151241 | median = -0.087500 | iqr = 13.925000
+Lefteye_V: mean =  -0.189756 | std = 1.271590 | median = 0.025000 | iqr = 1.225000
+Righteye_H: mean =  -2.028846 | std = 18.756957 | median = -0.025000 | iqr = 13.925000
+Righteye_V: mean =  0.202807 | std = 0.980455 | median = 0.175000 | iqr = 1.225000
+Finish :Horizontal pursuit 3.0s (0.33Hz)
+===============================================
+(3/8) Now loading : Horizontal saccade 3s
+Createing : Left_eye_Horizontal saccade 3s.png
+Createing : Right_eye_Horizontal saccade 3s.png
+Lefteye_H: mean =  -0.046073 | std = 0.838026 | median = -0.025000 | iqr = 0.800000
+Lefteye_V: mean =  -0.129758 | std = 0.914402 | median = -0.075000 | iqr = 0.712500
+Righteye_H: mean =  0.212282 | std = 0.811373 | median = 0.075000 | iqr = 0.800000
+Righteye_V: mean =  -0.058633 | std = 0.909815 | median = 0.025000 | iqr = 0.712500
+Finish :Horizontal saccade 3s
+===============================================
+(4/8) Now loading : Horizontal saccade 3.0s (0.33Hz)
+SPV_main.py: Traceback (most recent call last):
+  File "C:\Users\neuro\Desktop\usbcam54\usbcam\usbcam\bin\Release\Report\SPV_main.py", line 872, in <module>
+    p_peak_v, n_peak_v, m_peak_v, p_med_v, n_med_v, m_med_v, logs) = saccade_gain(y_1_H, input_1_H, locs_H, int(lc.patient_test_data[i]['Speed'][0].split(':')[1].split('s')[0]), logs)
+ValueError: invalid literal for int() with base 10: 'U'
+
+SPV_main.py occured ERROR.
+main.py: Traceback (most recent call last):
+  File "main.py", line 818, in <module>
+    re_data, le_data = r_mdata.test_data(), l_mdata.test_data()
+  File "C:\Users\neuro\Desktop\usbcam54\usbcam\usbcam\bin\Release\Report\data_righteye.py", line 39, in test_data
+    data[ mcontent.REPORT_SECTION[10] ] = dynamic_detail_data_sac()
+  File "C:\Users\neuro\Desktop\usbcam54\usbcam\usbcam\bin\Release\Report\data_righteye.py", line 306, in dynamic_detail_data_sac
+    'Horizontal': (SPV.record[i]['Time_E'], SPV.record[i]['R_X']),
+KeyError: 'Time_E'
+
+main.py occured ERROR.

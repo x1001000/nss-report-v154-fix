@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "/Users/peterliang/Desktop/Neruobit_Python/Report/main.py", line 743, in <module>
+    subprocess.Popen((l_file_path, mdb.name, tbl), shell=True)
+NameError: name 'mdb' is not defined

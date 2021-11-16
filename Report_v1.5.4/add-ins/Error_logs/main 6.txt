@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "/Users/peterliang/Desktop/Neruobit_Python/Report/main.py", line 694, in <module>
+    report(le_data, re_data, l_mdata)
+  File "/Users/peterliang/Desktop/Neruobit_Python/Report/main.py", line 267, in report
+    story = content(doc, data1, data2)
+  File "/Users/peterliang/Desktop/Neruobit_Python/Report/main.py", line 138, in content
+    summary_figure = get_image(summary_figure)
+  File "/Users/peterliang/Desktop/Neruobit_Python/Report/main.py", line 226, in get_image
+    image = Image(figure_name)
+  File "/Users/peterliang/anaconda3/envs/cv/lib/python3.7/site-packages/reportlab/platypus/flowables.py", line 421, in __init__
+    if not fp and os.path.splitext(filename)[1] in ['.jpg', '.JPG', '.jpeg', '.JPEG']:
+  File "/Users/peterliang/anaconda3/envs/cv/lib/python3.7/posixpath.py", line 122, in splitext
+    p = os.fspath(p)
+TypeError: expected str, bytes or os.PathLike object, not Image

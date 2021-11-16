@@ -1,0 +1,16 @@
+Traceback (most recent call last):
+  File "/Users/peterliang/Desktop/Neruobit_Python/Report/main.py", line 691, in <module>
+    report(le_data, re_data, l_mdata)
+  File "/Users/peterliang/Desktop/Neruobit_Python/Report/main.py", line 265, in report
+    return output(doc, story)
+  File "/Users/peterliang/Desktop/Neruobit_Python/Report/main.py", line 250, in output
+    doc.multiBuild(story, canvasmaker=FooterCanvas)
+  File "/Users/peterliang/anaconda3/envs/cv/lib/python3.7/site-packages/reportlab/platypus/doctemplate.py", line 1144, in multiBuild
+    self.build(tempStory, **buildKwds)
+  File "/Users/peterliang/anaconda3/envs/cv/lib/python3.7/site-packages/reportlab/platypus/doctemplate.py", line 1292, in build
+    BaseDocTemplate.build(self,flowables, canvasmaker=canvasmaker)
+  File "/Users/peterliang/anaconda3/envs/cv/lib/python3.7/site-packages/reportlab/platypus/doctemplate.py", line 1057, in build
+    self.handle_flowable(flowables)
+  File "/Users/peterliang/anaconda3/envs/cv/lib/python3.7/site-packages/reportlab/platypus/doctemplate.py", line 942, in handle_flowable
+    raise LayoutError(ident)
+reportlab.platypus.doctemplate.LayoutError: Flowable <Image at 0x7fc2d5a23990 frame=normal filename=/Users/peterliang/Desktop/Neruobit_Python/Report/summary.png> too large on page 2 in frame 'normal'(523.2755905511812 x 781.8897637795277*) of template 'Later'

@@ -1,0 +1,5 @@
+B100533006
+/Users/peterliang/Desktop/Neruobit_Python/Report/Error_logs/LOGS.txt is deleted successfully
+Record video type: mp4
+Successfully load 7 CSV Files
+===============================================

@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "C:\Users\neuro\Desktop\usbcam54\usbcam\usbcam\bin\Release\Report\SPV_main.py", line 872, in <module>
+    p_peak_v, n_peak_v, m_peak_v, p_med_v, n_med_v, m_med_v, logs) = saccade_gain(y_1_H, input_1_H, locs_H, int(lc.patient_test_data[i]['Speed'][0].split(':')[1].split('s')[0]), logs)
+ValueError: invalid literal for int() with base 10: 'U'

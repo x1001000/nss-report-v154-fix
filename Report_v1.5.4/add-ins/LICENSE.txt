@@ -1,0 +1,5 @@
+Report, version 1.4.0
+
+All contributions by the WCF, Jim Huang, Peter Liang, Elise Cheng:
+Copyright (c) 2016-2020 Neurobit Technologies Co., Ltd., https://www.neurobittech.com/
+All rights reserved.

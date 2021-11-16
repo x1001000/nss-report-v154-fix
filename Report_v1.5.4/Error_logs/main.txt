@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "main.py", line 818, in <module>
+    re_data, le_data = r_mdata.test_data(), l_mdata.test_data()
+  File "C:\Users\neuro\Desktop\usbcam54\usbcam\usbcam\bin\Release\Report\data_righteye.py", line 39, in test_data
+    data[ mcontent.REPORT_SECTION[10] ] = dynamic_detail_data_sac()
+  File "C:\Users\neuro\Desktop\usbcam54\usbcam\usbcam\bin\Release\Report\data_righteye.py", line 306, in dynamic_detail_data_sac
+    'Horizontal': (SPV.record[i]['Time_E'], SPV.record[i]['R_X']),
+KeyError: 'Time_E'

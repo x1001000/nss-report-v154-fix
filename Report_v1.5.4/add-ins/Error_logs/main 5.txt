@@ -1,0 +1,12 @@
+Traceback (most recent call last):
+  File "/Users/peterliang/Desktop/Neruobit_Python/Report/main.py", line 693, in <module>
+    report(le_data, re_data, l_mdata)
+  File "/Users/peterliang/Desktop/Neruobit_Python/Report/main.py", line 266, in report
+    story = content(doc, data1, data2)
+  File "/Users/peterliang/Desktop/Neruobit_Python/Report/main.py", line 137, in content
+    summart_figure = paste([summary_figure_le, summary_figure_re])
+  File "/Users/peterliang/Desktop/Neruobit_Python/Report/main.py", line 231, in paste
+    im_list = [Image.open(fn) for fn in img_list]
+  File "/Users/peterliang/Desktop/Neruobit_Python/Report/main.py", line 231, in <listcomp>
+    im_list = [Image.open(fn) for fn in img_list]
+AttributeError: type object 'Image' has no attribute 'open'

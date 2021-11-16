@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "/Users/peterliang/Desktop/Neruobit_Python/Report/main.py", line 695, in <module>
+    report(le_data, re_data, l_mdata)
+  File "/Users/peterliang/Desktop/Neruobit_Python/Report/main.py", line 268, in report
+    story = content(doc, data1, data2)
+  File "/Users/peterliang/Desktop/Neruobit_Python/Report/main.py", line 139, in content
+    renderPM.drawToFile(summary_figure, 'summary.png', 'PNG')
+  File "/Users/peterliang/anaconda3/envs/cv/lib/python3.7/site-packages/reportlab/graphics/renderPM.py", line 680, in drawToFile
+    c = drawToPMCanvas(d, dpi=dpi, bg=bg, configPIL=configPIL, showBoundary=showBoundary)
+  File "/Users/peterliang/anaconda3/envs/cv/lib/python3.7/site-packages/reportlab/graphics/renderPM.py", line 664, in drawToPMCanvas
+    d = renderScaledDrawing(d)
+  File "/Users/peterliang/anaconda3/envs/cv/lib/python3.7/site-packages/reportlab/graphics/renderbase.py", line 172, in renderScaledDrawing
+    renderScale = d.renderScale
+AttributeError: 'NoneType' object has no attribute 'renderScale'
