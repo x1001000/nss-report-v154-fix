@@ -188,13 +188,15 @@ def patient_data(csv_file):
 
         # Combine mode name and speed number into one name
         if file[i]['Speed_Mode'] != '4':
-            if file[i]['Speed'][0].split(':')[1].split('/')[0][0] == ' ':
-                sec = file[i]['Speed'][0].split(':')[1].split('/')[0]
-                file[i]['file_name'] += sec
-            else:    
-                file[i]['file_name'] += " "
-                sec = file[i]['Speed'][0].split(':')[1].split('/')[0]
-                file[i]['file_name'] += sec
+            # if file[i]['Speed'][0].split(':')[1].split('/')[0][0] == ' ':
+            #     sec = file[i]['Speed'][0].split(':')[1].split('/')[0]
+            #     file[i]['file_name'] += sec
+            # else:    
+            #     file[i]['file_name'] += " "
+            #     sec = file[i]['Speed'][0].split(':')[1].split('/')[0]
+            #     file[i]['file_name'] += sec
+            sec = {'Fast': ' 3s', 'Medium': ' 5s', 'Slow': ' 10s'}[file[i]['Speed'][0].split(':')[1].split('/')[0]]
+            file[i]['file_name'] += sec
         else:
             file[i]['file_name'] = file[i]['file_name'] + " " + str(file[i]['Userdefined_speed']) + "s (" + str(round(1/file[i]['Userdefined_speed'], 2)) + "Hz)"
 
